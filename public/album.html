@@ -3,28 +3,43 @@
   <head>
     <title>Bloc Jams</title>
       <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
-      <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet' type='text/css'>
-      <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+      <!-- <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" type="text/css" href="/stylesheets/app.css"> -->
+
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+      <link rel="stylesheet" type="text/css" href="../app/stylesheets/app.scss">
+      <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet' type='text/css'>
+
   </head>
    
-  <body>
-      
-    <div class='nav-bar'> <!-- Nav Bar -->
-      <img src="/images/blocjams.png">
-    </div>
+  <body class="player">
 
-    <div class='album-container'>
+    <!-- Navigation -->
+    <nav class="player-header-nav navbar">
+      <div class="container">
+        <div class='navbar-header'> <!-- Nav Bar -->
+          <a class='logo navbar-left'>
+            <!-- <img src="/images/blocjams.png"> -->
+
+            <img src="../app/assets/images/blocjams.png">
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <div class='album-container container'>
 
       <!-- Album Header -->
-      <div class='album-header-container'> 
+      <div class='album-header-container row'>
 
         <!-- Album Image -->
-        <div> 
-          <img src="/images/album-placeholder.png" />
+        <div class='col-md-3'> 
+          <img src="../app/assets/images/album-placeholder.png" />
         </div>
 
         <!-- Album Information -->
-        <div class='album-information'> 
+        <div class='album-header-information col-md-8 col-md-push-1'> 
           <h3> The Colors </h3>
           <h4> Pablo Picasso </h4>
           <h5> 1881 on Cubism </h5>
@@ -32,43 +47,32 @@
       </div>
 
       <!-- Song table -->
-      <div> 
-        <table class='album-song-listing'>
+      <div class='row'> 
+        <table class='album-song-listing table'>
           <tr>
-            <td> 1 </td>
-            <td> Blue </td>
-            <td> X:XX </td>
-            <td>In collection</td>
+            <td class='col-md-1'> 1 </td>
+            <td class='col-md-9'> Blue </td>
+            <td class='col-md-2'> X:XX </td>
           </tr>
           <tr>
-            <td> 2 </td>
-            <td> Green </td>
-            <td> X:XX </td>
-            <td>In collection</td>
+            <td class='col-md-1'> 2 </td>
+            <td class='col-md-9'> Green </td>
+            <td class='col-md-2'> X:XX </td>
           </tr>
           <tr>
-            <td> 3 </td>
-            <td> Red </td>
-            <td> X:XX </td>
-            <td>Not in collection</td>
+            <td class='col-md-1'> 3 </td>
+            <td class='col-md-9'> Red </td>
+            <td class='col-md-2'> X:XX </td>
           </tr>
           <tr>
-            <td> 4 </td>
-            <td> Pink </td>
-            <td> X:XX </td>
-            <td>In collection</td>
+            <td class='col-md-1'> 4 </td>
+            <td class='col-md-9'> Pink </td>
+            <td class='col-md-2'> X:XX </td>
           </tr>
           <tr>
-            <td> 5 </td>
-            <td> Magenta </td>
-            <td> X:XX </td>
-            <td>In collection</td>
-          </tr>
-          <tr>
-            <td> 6 </td>
-            <td> Deep purlpe </td>
-            <td> X:XX </td>
-            <td>Not in collection</td>
+            <td class='col-md-1'> 5 </td>
+            <td class='col-md-9'> Magenta </td>
+            <td class='col-md-2'> X:XX </td>
           </tr>
         </table>
      </div>
