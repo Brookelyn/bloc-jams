@@ -38,7 +38,7 @@ var changeAlbumView = function(album){
 	$albumTitle.text(album.name);
 
 	// Update the album artist
-	var $albumArtist = $(.'album-artist');
+	var $albumArtist = $('.album-artist');
 	$albumArtist.text(album.artist);
 
 	// Update the meta information
@@ -49,8 +49,10 @@ var changeAlbumView = function(album){
 	var $albumImage = $('.album-image img');
 	$albumImage.attr('src', album.albumArtUrl);
 
-	var $songList = $('.album-song-listing');
-	$songList.empty();
+	// Update the Song List
+  var $songList = $('.album-song-listing');
+	 $songList.empty();
+    var songs = album.songs;
 		for(var i = 0; i < songs.length; i++) {
 			var songData = songs[i];
 			var $newRow = createSongRow(i+1, songData.name, songData.length);
