@@ -183,3 +183,17 @@
     height: 42px;
   }
 
+  .collection-album-container .collection-overlay-button:hover {
+    cursor: pointer;
+    color: white;
+    background-color: #d2287b;
+  }
+ 
+  .collection-album-container .collection-overlay-button i {
+    line-height: 42px;
+  }
+ 
+  .collection-album-container .collection-overlay-button .fa-play {
+    padding-left: 5px;
+  }
+
