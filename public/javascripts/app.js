@@ -243,7 +243,7 @@ var buildAlbumThumbnail = function() {
   var template =
       '<div class="collection-album-container col-md-2">'
     + '  <div class="collection-album-image-container">'
-    + '    <img src="../app/assets/images/album-placeholder.png"/>'
+    + '    <img src="/images/album-placeholder.png"/>'
     + '  </div>'
     + '  <div class="caption album-collection-info">'
     + '    <p>'
