@@ -153,6 +153,57 @@ var changeAlbumView = function(album){
 		}
 }
 
+
+var updateSeekPercentage = function($seekBar, event) {
+  var barWidth = $seekBar.width();
+  var offsetX = event.pageX - $seekBar.offset().left;
+
+  var offsetXPercent = (offsetX  / barWidth) * 100;
+  offsetXPercent = Math.max(0, offsetXPercent);
+  offsetXPercent = Math.min(100, offsetXPercent);
+ 
+  var percentageString = offsetXPercent + '%';
+  $seekBar.find('.fill').width(percentageString);
+  $seekBar.find('.thumb').css({left: percentageString});
+}
+
+
+var setupSeekBars = function() {
+ 
+  $seekBars = $('.player-bar .seek-bar');
+  $seekBars.click(function(event) {
+    updateSeekPercentage($(this), event);
+  });  
+
+  $seekBars.find('.thumb').mousedown(function(event){
+    var $seekBar = $(this).parent();
+
+    $seekBar.addClass('no-animate');
+ 
+    $('.player-bar').bind('mousemove.thumb', function(event){
+      updateSeekPercentage($seekBar, event);
+    });
+ 
+    //cleanup
+    $(document).bind('mouseup.thumb', function(){
+      $seekBar.removeClass('no-animate');
+      $(document).unbind('mousemove.thumb');
+      $(document).unbind('mouseup.thumb');
+    });
+  });
+
+};
+
+
+// var mouseLocation = function() {
+//   $(document).on("mousemove", function(event) {
+//     console.log('The mouse is at X: ' + event.pageX + ' and Y: ' + event.pageY);
+//   });
+
+// };
+
+
+
 var currentlyPlayingSong = null;
 
 
@@ -226,6 +277,8 @@ if (document.URL.match(/\/album.html/)) {
 	$(document).ready(function() {
 		
 		changeAlbumView(albumPicasso);
+    setupSeekBars();
+    // mouseLocation();
 
 	});
 }
