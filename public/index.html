@@ -5,6 +5,7 @@
     
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet'>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"> 
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
 
@@ -22,7 +23,26 @@
   </head>
 
 
-  <body>    
+  <body> 
+
+    <!-- Navigation -->
+      <nav class="player-header-nav navbar">
+        <div class="container">
+          
+          <div class='navbar-header'>
+            <a ui-sref='landing' class='logo navbar-left'>
+              <img src="/images/blocjams.png">
+              <!-- <img src="../app/assets/images/blocjams.png"> -->
+            </a>
+          </div>
+
+          <ul class="nav navbar-nav navbar-right">
+            <li>
+              <a ui-sref='collection'>Library</a></li>
+          </ul>
+          
+        </div>
+      </nav>   
 
     <!-- Render templates here -->
       <div ui-view>
