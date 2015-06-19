@@ -316,7 +316,7 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
     $stateProvider.state('landing', {
         url: '/',
         controller: 'Landing.controller',
-        templateUrl: '/templates/landing.html'
+        templateUrl: '../templates/landing.html'
     });
 
     $stateProvider.state('collection', {
