@@ -81,6 +81,9 @@ td.song-number {
   height: 70px;
   text-align: center; }
 
+.first {
+  background: #ff00aa; }
+
 /***** Collection page *****/
 .collection-album-container {
   margin-top: 30px;

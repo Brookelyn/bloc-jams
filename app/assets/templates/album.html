@@ -19,7 +19,9 @@
   <!-- Song table -->
   <div class='row'> 
     <table class='album-song-listing table'>
+      
       <tr ng-repeat="song in album.songs" ng-mouseenter="onHoverSong(song)" ng-mouseleave="offHoverSong(song)">
+        
         <td class="song-number col-md-1">
           <span ng-switch="getSongState(song)">
             <span ng-switch-when="playing">
@@ -33,14 +35,20 @@
               </a>
             </span>
             <span ng-switch-default>
+              
               {{ $index + 1 }}
+              
             </span>
           </span>
         <td>
         <td class="col-md-9"> {{ song.name }} </td>
         <td class="col-md-2"> {{ song.length }} </td>
+        
       </tr>
+      
     </table>
   </div>
 
+  <ng-include src="'/templates/player_bar.html'"></ng-include>
+  
 </div>
