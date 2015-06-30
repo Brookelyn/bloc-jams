@@ -143,7 +143,7 @@ blocJams.directive('slider', function(){
     return {
         templateUrl: '/templates/directives/slider.html',
         replace: true,
-        restrict: 'E'
+        restrict: 'E',
         link: function(scope, element, attributes) {
  
             $seekBar = $(element);
