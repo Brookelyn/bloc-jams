@@ -415,48 +415,49 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
 
 // Slider directive
 blocJams.directive('slider', function(){
-    var updateSeekPercentage = function($seekBar, event) {
-        var barWidth = $seekBar.width();
-        var offsetX = event.pageX - $seekBar.offset().left;
 
-        var offsetXPercent = (offsetX  / barWidth) * 100;
-        offsetXPercent = Math.max(0, offsetXPercent);
-        offsetXPercent = Math.min(100, offsetXPercent);
+   var updateSeekPercentage = function($seekBar, event) {
+     var barWidth = $seekBar.width();
+     var offsetX =  event.pageX - $seekBar.offset().left;
  
-        var percentageString = offsetXPercent + '%';
-        $seekBar.find('.fill').width(percentageString);
-        $seekBar.find('.thumb').css({left: percentageString});
-    }
-
-    return {
-        templateUrl: '/templates/directives/slider.html',
-        replace: true,
-        restrict: 'E',
-        link: function(scope, element, attributes) {
+     var offsetXPercent = (offsetX  / $seekBar.width()) * 100;
+     offsetXPercent = Math.max(0, offsetXPercent);
+     offsetXPercent = Math.min(100, offsetXPercent);
  
-            $seekBar = $(element);
-            $seekBar.click(function(event) {
-                updateSeekPercentage($(this), event);
-            });  
-
-            $seekBar.find('.thumb').mousedown(function(event){
-            var $seekBar = $(this).parent();
-
-            $seekBar.addClass('no-animate');
+     var percentageString = offsetXPercent + '%';
+     $seekBar.find('.fill').width(percentageString);
+     $seekBar.find('.thumb').css({left: percentageString});
+   }
  
-            $('.player-bar').bind('mousemove.thumb', function(event){
-                updateSeekPercentage($seekBar, event);
-            });
+  return {
+    templateUrl: '/templates/directives/slider.html',
+    replace: true,
+    restrict: 'E',
+    link: function(scope, element, attributes) {
  
-            //cleanup
-            $(document).bind('mouseup.thumb', function(){
-            $seekBar.removeClass('no-animate');
-            $(document).unbind('mousemove.thumb');
-            $(document).unbind('mouseup.thumb');
-            });
+      var $seekBar = $(element);
+ 
+      $seekBar.click(function(event) {
+        updateSeekPercentage($seekBar, event);
+      });
+ 
+      $seekBar.find('.thumb').mousedown(function(event){
+        $seekBar.addClass('no-animate');
+ 
+        $(document).bind('mousemove.thumb', function(event){
+          updateSeekPercentage($seekBar, event);
         });
+ 
+        //cleanup
+        $(document).bind('mouseup.thumb', function(){
+          $seekBar.removeClass('no-animate');
+          $(document).unbind('mousemove.thumb');
+          $(document).unbind('mouseup.thumb');
+        });
+ 
+      });
     }
-};
+  };
 });
 
  
@@ -513,9 +514,61 @@ blocJams.service('SongPlayer', function() {
             });
             this.play();
         }
+    };
+});
+
+
+
+// Directive experiments
+
+blocJams.directive('clickMe', function(){
+    return {
+        restrict: 'C',
+        link: function(scope, element) {
+            $(element).click(function(){
+                alert('You clicked me!');
+            });
+        }
 
     };
 });
+
+
+
+blocJams.directive('countHoverTime', function(){
+
+    var counter = 0;
+    var timerOn = false;
+
+    var countingTime = function(){
+        counter++;
+        console.log('working');
+        if (timerOn) {
+             window.setTimeout( countingTime, 1000);
+            }
+        }
+        
+    return {
+        // restrict: 'A',
+       
+        link: function(scope, element, attributes){
+            
+
+            $(element).
+                mouseenter(function(){
+                    timerOn = true;
+                    console.log('Hovering');
+                    countingTime();
+                }).
+                mouseleave(function(){
+                    element.removeClass('count-hover-time');
+                    timerOn = false;
+                    console.log(counter);
+                });
+        }
+    };
+});
+
 });
 
 ;require.register("scripts/collection", function(exports, require, module) {
