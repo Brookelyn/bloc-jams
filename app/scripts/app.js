@@ -122,13 +122,17 @@ blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope
 // Player bar controller
 blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
     $scope.songPlayer = SongPlayer;
+
+    SongPlayer.onTimeUpdate(function(event, time){
+        $scope.$apply(function(){
+            $scope.playTime = time;
+        });
+    });
 }]);
 
 
+
 // Slider directive
-
-
-
 blocJams.directive('slider', ['$document', function($document){
 
   // Returns a number between 0 and 1 to determine where the mouse event happened along the slider bar.
@@ -153,7 +157,6 @@ blocJams.directive('slider', ['$document', function($document){
         return Number(value);
     }
   }
-
 
   return {
     templateUrl: '/templates/directives/slider.html', // We'll create these files shortly.
@@ -220,12 +223,43 @@ blocJams.directive('slider', ['$document', function($document){
     }
   };
 }]);
-  
+
+
+
+// Timecode filter
+blocJams.filter('timecode', function(){
+    return function(seconds){
+        seconds = Number.parseFloat(seconds);
+
+        // If no time is provided
+        if (Number.isNaN(seconds)){
+            return '-:--';
+        }
+
+        // Make it a whole number
+        var wholeSeconds = Math.floor(seconds);
+
+        var minutes = Math.floor(wholeSeconds / 60);
+
+        remainingSeconds = wholeSeconds % 60;
+
+        var output = minutes + ':';
+
+        // Zero pad sconds, so 9 seconds should be :09
+        if (remainingSeconds < 10) {
+            output += '0';
+        }
+
+        output += remainingSeconds;
+
+        return output;
+    }
+});
 
  
 
 // Playing songs
-blocJams.service('SongPlayer', function() {
+blocJams.service('SongPlayer', ['$rootScope', function($rootScope) {
     var currentSoundFile = null;
 
     var trackIndex = function(album, song) {
@@ -270,6 +304,9 @@ blocJams.service('SongPlayer', function() {
                 currentSoundFile.setTime(time);
             }
         },
+        onTimeUpdate: function(callback) {
+            return $rootScope.$on('sound:timeupdate', callback);
+        },
         setSong: function(album, song) {
             if (currentSoundFile) {
                 currentSoundFile.stop();
@@ -281,10 +318,15 @@ blocJams.service('SongPlayer', function() {
                 formats: [ "mp3" ],
                 preload: true
             });
+
+            currentSoundFile.bind('timeupdate', function (){
+                $rootScope.$broadcast('sound:timeupdate', this.getTime());
+            });
+
             this.play();
         }
     };
-});
+}]);
 
 
 
