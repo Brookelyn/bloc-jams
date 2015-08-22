@@ -1,8 +1,6 @@
-// require('./landing');
-// require('./collection');
-// require('./album');
-// require("./profile");
- 
+
+
+
 // Example album.
 var albumPicasso = {
     name: 'The Colors',
@@ -43,6 +41,12 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
         controller: 'Album.controller'
     });
 }]);
+
+blocJams.controller('Navigation.controller', function($scope){
+    $scope.chevronRotate = true;
+});
+
+
  
 
 

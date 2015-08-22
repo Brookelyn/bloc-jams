@@ -317,6 +317,54 @@ td.song-number {
     background-color: #b3b3b3;
     cursor: not-allowed; }
 
+@media screen and (max-width: 768px) {
+  /* Global */
+  /* Landing page */
+  /* Collection page */
+  /* Player bar */
+  .player-header-nav li {
+    text-align: right; }
+  .hero-content {
+    margin-top: -5em; }
+  .hero-content h1, .hero-content h3 {
+    text-align: center; }
+  .selling-points {
+    padding: 0; }
+    .selling-points .point {
+      width: 100%;
+      padding: 1.5em 2em; }
+      .selling-points .point h5 {
+        height: 1.75em; }
+      .selling-points .point p {
+        text-align: center;
+        font-size: 1.25em; }
+  .landing-album-list {
+    text-align: center; }
+    .landing-album-list img {
+      min-width: 200px;
+      max-width: 400px; }
+  .collection-album-container {
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 280px;
+    /* Width of the album image. */ }
+  .player-bar .player-bar-control-group {
+    display: block;
+    width: 400px;
+    text-align: center;
+    padding: 1em 0; }
+  .player-bar .play-controls .previous {
+    margin-right: 100px; }
+  .player-bar .play-controls .play-pause {
+    margin-right: 100px; }
+  .player-bar .currently-playing {
+    padding-top: 2em; }
+    .player-bar .currently-playing .song-name {
+      top: 5px; }
+    .player-bar .currently-playing .artist-name {
+      bottom: -10px; } }
+
 /***** Global *****/
 html {
   height: 100%; }
@@ -335,15 +383,37 @@ body.landing {
 
 /***** Navigation *****/
 .player-header-nav {
-  background-color: rgba(123, 70, 163, 0.9); }
-  .player-header-nav .navbar-nav a {
-    line-height: 45px;
+  background-color: rgba(123, 70, 163, 0.9);
+  border: rgba(123, 70, 163, 0.9); }
+  .player-header-nav .logo img {
+    padding: 10px; }
+  .player-header-nav .glyphicon, .player-header-nav .chevron-down {
+    font-weight: 700;
+    font-size: 24px; }
+  .player-header-nav .chevron-up {
+    transform: rotate(180deg); }
+  .player-header-nav .navbar-toggle {
+    vertical-align: middle; }
+  .player-header-nav .navbar-default .navbar-toggle:focus, .player-header-nav .navbar-default .navbar-toggle:hover {
+    background-color: blue; }
+  .player-header-nav .navbar-toggle:hover {
+    color: rgba(123, 70, 163, 0.9);
+    background-color: white; }
+  .player-header-nav .navbar-nav li a {
     color: white;
+    text-align: center;
+    line-height: 45px;
     text-transform: uppercase;
     font-weight: 700;
     letter-spacing: 1.2; }
-    .player-header-nav .navbar-nav a:hover {
-      color: rgba(123, 70, 163, 0.9); }
+  .player-header-nav .navbar-nav li a:hover {
+    color: rgba(123, 70, 163, 0.9);
+    background-color: white; }
+  .player-header-nav .navbar-collapse {
+    border: rgba(123, 70, 163, 0.9); }
+
+.rotate {
+  transition: all 1s linear; }
 
 body.landing .navbar {
   margin-bottom: 0; }

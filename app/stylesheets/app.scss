@@ -4,6 +4,8 @@
 @import "player_bar";
 @import "profile";
 @import "buttons";
+@import "mobile";
+
 
 
 /***** Global *****/
@@ -34,22 +36,78 @@
  
   .player-header-nav {
     background-color: rgba(123, 70, 163, .9);
+    border: rgba(123, 70, 163, .9);
 
-    .navbar-nav {
-      a {
-        line-height: 45px;
-        color: white;
-        text-transform: uppercase;
-        font-weight: 700;
-        letter-spacing: 1.2;
-   
-        &:hover {
-           color: rgba(123, 70, 163, .9);
+    .logo {
+      img {
+        padding: 10px;
+      }
+    }
+
+    .glyphicon, .chevron-down {
+      font-weight: 700;
+      font-size: 24px;
+    }
+
+    .chevron-up {
+      transform: rotate(180deg);
+    }
+  
+    .navbar-toggle {
+      vertical-align: middle;
+
+    }
+
+    .navbar-default {
+      .navbar-toggle {
+        &:focus, &:hover {
+          // background-color: rgba(123, 70, 163, .9);
+          background-color: blue;
         }
       }
     }
+
+    .navbar-toggle:hover {
+      color: rgba(123, 70, 163, .9);
+      background-color: #FFF;
+    }
+
+    .navbar-nav {
+      li {
+        a {
+          color: #FFF;
+          text-align: center;
+          line-height: 45px;
+          text-transform: uppercase;
+          font-weight: 700;
+          letter-spacing: 1.2;
+        }
+
+        a:hover {
+          color: rgba(123, 70, 163, .9);
+          background-color: #FFF;
+        }
+      }
+    }
+
+    .navbar-collapse {
+      border: rgba(123, 70, 163, .9);
+    }
+
+  
   }
+
+  
+  .rotate {
+    transition: all 1s linear;
+  }
+
+
 
   body.landing .navbar {
     margin-bottom: 0;
   }
+
+
+  
+  

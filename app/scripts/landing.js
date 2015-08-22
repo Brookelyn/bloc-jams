@@ -1,3 +1,10 @@
+// Dropdown menu controller
+
+blocJams.controller('menuCollapse', function ($scope) {
+  $scope.isCollapsed = false;
+});
+
+
 $(document).ready(function () {
 
 	$('.hero-content h3').click(function() {

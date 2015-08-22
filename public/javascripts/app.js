@@ -286,11 +286,9 @@ if (document.URL.match(/\/album.html/)) {
 });
 
 ;require.register("scripts/app", function(exports, require, module) {
-// require('./landing');
-// require('./collection');
-// require('./album');
-// require("./profile");
- 
+
+
+
 // Example album.
 var albumPicasso = {
     name: 'The Colors',
@@ -331,6 +329,12 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
         controller: 'Album.controller'
     });
 }]);
+
+blocJams.controller('Navigation.controller', function($scope){
+    $scope.chevronRotate = true;
+});
+
+
  
 
 
@@ -764,6 +768,13 @@ if (document.URL.match(/\/collection.html/)) {
 });
 
 ;require.register("scripts/landing", function(exports, require, module) {
+// Dropdown menu controller
+
+blocJams.controller('menuCollapse', function ($scope) {
+  $scope.isCollapsed = false;
+});
+
+
 $(document).ready(function () {
 
 	$('.hero-content h3').click(function() {

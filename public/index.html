@@ -3,16 +3,20 @@
   
   <head>
     <title>Bloc Jams</title>
+
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
       <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.17.1/build/cssreset/cssreset-min.css">
       <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,800,600,700,300' rel='stylesheet' type='text/css'>
       <link href="//netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+
        
       <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.15/angular.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/buzz/1.1.0/buzz.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.10/angular-ui-router.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
       <script src="/javascripts/vendor.js"></script>
       <script src="/javascripts/app.js"></script>
        
@@ -22,20 +26,31 @@
     </head>
    
     <body>
+      
+
       <!-- Nav Bar -->
-      <nav class="player-header-nav navbar">
-        <div class="container">
-          <div class='navbar-header'> 
+
+      <nav class="player-header-nav navbar navbar-default" ng-app="blocJamsNav" ng-controller="Navigation.controller">
+        <div class="container-fluid">
+          <div class="navbar-header">
+            <button type="button navbar-btn" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar" ng-model="chevronRotate">
+              <span class="glyphicon glyphicon-menu-down rotate" ng-class="{'chevronDown': chevronRotate, 'chevronUp': !chevronRotate}"></span>
+            </button>
             <a ui-sref='landing' class='logo navbar-left'>
               <img src="/images/blocjams.png">
             </a>
           </div>
-          
-          <ul class="nav navbar-nav navbar-right">
-            <li><a ui-sref='collection'>Library</a></li>
-          </ul>
+          <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav navbar-right">
+              <li><a href="#">Playlists</a></li>
+              <li><a ui-sref="collection">Library</a></li>
+              <li><a href="#">Profile</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
+
+
  
       <!-- Render templates here -->
       <div ui-view></div>
