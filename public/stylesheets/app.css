@@ -382,41 +382,59 @@ body.landing {
   padding-bottom: 0; }
 
 /***** Navigation *****/
-.player-header-nav {
+.navbar-default {
   background-color: rgba(123, 70, 163, 0.9);
+  border: none; }
+
+.navbar-default .navbar-toggle:focus {
+  background-color: rgba(123, 70, 163, 0.9);
+  color: white; }
+
+.navbar-default .navbar-toggle:hover {
+  color: rgba(123, 70, 163, 0.9);
+  background-color: white; }
+
+.navbar-default .navbar-collapse {
+  border: none;
+  box-shadow: none; }
+
+.logo img {
+  padding: 10px; }
+
+.navbar-header button {
+  width: 60px;
+  margin: 10px; }
+
+.glyphicon {
+  font-weight: 700;
+  font-size: 24px; }
+
+.navbar-collapse .navbar-nav li a {
+  color: white;
+  text-align: center;
+  line-height: 45px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.2; }
+.navbar-collapse .navbar-nav li a:hover {
+  color: rgba(123, 70, 163, 0.9);
+  background-color: white; }
+
+.navbar-header {
   border: rgba(123, 70, 163, 0.9); }
-  .player-header-nav .logo img {
-    padding: 10px; }
-  .player-header-nav .glyphicon, .player-header-nav .chevron-down {
-    font-weight: 700;
-    font-size: 24px; }
-  .player-header-nav .chevron-up {
-    transform: rotate(180deg); }
-  .player-header-nav .navbar-toggle {
-    vertical-align: middle; }
-  .player-header-nav .navbar-default .navbar-toggle:focus, .player-header-nav .navbar-default .navbar-toggle:hover {
-    background-color: blue; }
-  .player-header-nav .navbar-toggle:hover {
-    color: rgba(123, 70, 163, 0.9);
-    background-color: white; }
-  .player-header-nav .navbar-nav li a {
-    color: white;
-    text-align: center;
-    line-height: 45px;
-    text-transform: uppercase;
-    font-weight: 700;
-    letter-spacing: 1.2; }
-  .player-header-nav .navbar-nav li a:hover {
-    color: rgba(123, 70, 163, 0.9);
-    background-color: white; }
-  .player-header-nav .navbar-collapse {
-    border: rgba(123, 70, 163, 0.9); }
+
+.chevdown {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg); }
+
 
 .rotate {
-  transition: all 1s linear; }
-
-body.landing .navbar {
-  margin-bottom: 0; }
+  -webkit-transition: transform 0.2s ease-in-out;
+  -moz-transition: transform 0.2s ease-in-out;
+  -o-transition: transform 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out; }
 
 
 /*# sourceMappingURL=app.css.map*/

@@ -34,79 +34,85 @@
 
   //  medium-purple: #7B46A3 - 123, 70, 163
  
-  .player-header-nav {
+.navbar-default {
     background-color: rgba(123, 70, 163, .9);
-    border: rgba(123, 70, 163, .9);
+    border: none;
+}
 
-    .logo {
-      img {
-        padding: 10px;
+.navbar-default .navbar-toggle:focus {
+  background-color: rgba(123, 70, 163, .9);
+  color: #FFF;
+}
+
+.navbar-default .navbar-toggle:hover {
+  color: rgba(123, 70, 163, .9);
+  background-color: #FFF;
+}
+
+.navbar-default .navbar-collapse {
+  border: none;
+  box-shadow: none;
+}
+
+.logo {
+  img {
+    padding: 10px;
+  }
+}
+
+.navbar-header {
+  button {
+    width: 60px;
+    margin: 10px;
+  }
+}
+
+.glyphicon  {
+  font-weight: 700;
+  font-size: 24px; 
+}
+
+.navbar-collapse {
+
+  .navbar-nav {
+    li {
+      a {
+        color: #FFF;
+        text-align: center;
+        line-height: 45px;
+        text-transform: uppercase;
+        font-weight: 700;
+        letter-spacing: 1.2;
+      }
+      
+      a:hover {
+        color: rgba(123, 70, 163, .9);
+        background-color: #FFF;
       }
     }
-
-    .glyphicon, .chevron-down {
-      font-weight: 700;
-      font-size: 24px;
-    }
-
-    .chevron-up {
-      transform: rotate(180deg);
-    }
-  
-    .navbar-toggle {
-      vertical-align: middle;
-
-    }
-
-    .navbar-default {
-      .navbar-toggle {
-        &:focus, &:hover {
-          // background-color: rgba(123, 70, 163, .9);
-          background-color: blue;
-        }
-      }
-    }
-
-    .navbar-toggle:hover {
-      color: rgba(123, 70, 163, .9);
-      background-color: #FFF;
-    }
-
-    .navbar-nav {
-      li {
-        a {
-          color: #FFF;
-          text-align: center;
-          line-height: 45px;
-          text-transform: uppercase;
-          font-weight: 700;
-          letter-spacing: 1.2;
-        }
-
-        a:hover {
-          color: rgba(123, 70, 163, .9);
-          background-color: #FFF;
-        }
-      }
-    }
-
-    .navbar-collapse {
-      border: rgba(123, 70, 163, .9);
-    }
-
-  
   }
+}
 
-  
-  .rotate {
-    transition: all 1s linear;
-  }
+.navbar-header {
+  border: rgba(123, 70, 163, .9);
+}
 
+.chevdown {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
 
+.chevup {
+}
 
-  body.landing .navbar {
-    margin-bottom: 0;
-  }
+.rotate {
+  -webkit-transition: transform .20s ease-in-out;
+  -moz-transition: transform .20s ease-in-out;
+  -o-transition: transform .20s ease-in-out;
+  transition: transform .20s ease-in-out;
+}
 
 
   
