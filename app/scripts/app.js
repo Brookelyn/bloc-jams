@@ -48,13 +48,6 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
 blocJams.controller('navcontrol', ['$scope', function($scope){
     $scope.chevronRotate = true;
 }]);
-
-// var navigationApp = angular.module('navApp', [])
-// .controller('navcontrol', function($scope) {
-//   $scope.chevronRotate = true;
-// });
-
-
  
 
 
