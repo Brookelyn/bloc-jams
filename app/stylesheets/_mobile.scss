@@ -1,3 +1,5 @@
+
+
 @media screen and (max-width: 768px) {
 
 /* Global */
@@ -39,14 +41,11 @@
   }
 
   .landing-album-list {
-    text-align: center;
-    
-    img {
-      min-width: 200px;
-      max-width: 400px;
-      
-    }
+    max-width: 600px;
+    min-width: 300px;
   }
+
+
 
 
 

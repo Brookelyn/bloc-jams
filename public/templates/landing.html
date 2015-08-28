@@ -23,20 +23,67 @@
   </div>
 </div>
 
-<div class="landing-album-list container ">
-  <div class="row">
-    <div class="col-md-4 flip-container" ng-repeat="albumURL in albumURLs">
+<!-- <div class="landing-album-list">
+  <div class="landing-album-grid-padding">
+    <div class="container-fluid">
       
-      <div class="flipper">
-        <div  class="front">
-          <img ng-src="{{albumURL}}">
+      <div class="row-fluid">
+        
+        <div class="col-xs-12 col-md-4">
+          <img class="img-responsive center-block" src="/images/album-placeholders/album-1.jpg">
         </div>
-        <div class="back">
-          <h3>The Colours</h3>
-          <h4>Pablo Picasso</h4>
+        <div class="col-xs-12 col-md-4">
+          <img class="img-responsive center-block" src="/images/album-placeholders/album-2.jpg">
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <img class="img-responsive center-block" src="/images/album-placeholders/album-3.jpg">
+        </div>
+
+      
+        
+        <div class="col-xs-12 col-md-4">
+          <img class="img-responsive center-block" src="/images/album-placeholders/album-4.jpg">
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <img class="img-responsive center-block" src="/images/album-placeholders/album-5.jpg">
+        </div>
+        <div class="col-xs-12 col-md-4">
+          <img class="img-responsive center-block" src="/images/album-placeholders/album-6.jpg">
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div> -->
+
+ 
+
+<div class="landing-album-list">
+  <div class="landing-album-grid-padding">
+    <div class="container-fluid">
+
+      <div class="row-fluid">
+        <div class="col-xs-12 col-md-4 flip-container" ng-repeat="albumURL in albumURLs">
+          <div class="flipper">
+           
+            <div class="front">
+              <img class="img-responsive center-block"ng-src="{{albumURL}}">
+            </div>
+
+            <div class="back">
+              <div class="back-background center-block">
+                <h3 class="text-center">The Colours</h3>
+                <h4 class="text-center">Pablo Picasso</h4>
+              </div>
+            </div>
+            
+
+          </div>
         </div>
       </div>
-    
+
     </div>
   </div>
 </div>
+
+
